@@ -1,0 +1,103 @@
+{{ define "main" }}
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('#maximage').maximage({
+      cycleOptions: {
+            speed: 800,
+            timeout: 2000
+        },
+      onFirstImageLoaded: function(){
+            jQuery('#cycle-loader').hide();
+            jQuery('#maximage').fadeIn('fast');
+        },
+      fillElement: '#holder'
+    });
+  });
+</script>
+
+<section id="holder" class="relative">
+  <div id="maximage" class="flex relative w-50 overflow-hidden items-center justify-center vh-100 center">
+    {{ range .Params.slides }}
+    <img src="{{.}}" class="bg-top">
+    {{ end }}
+  </div>
+</section>
+
+<div id="reader" class="o-0 fixed w-100 vh-100 top-0 left-0 bottom-0 right-0 {{ .Params.readerbg }}"></div>
+
+<section class="relative mw9 ph4 ph5-ns pv4-ns center">
+  {{ if isset .Params "sideline" }}
+    {{ partial "sideline" (dict "sideline" .Params.sideline (cond (isset .Params "sidecolor") "sidecolor" "") .Params.sidecolor) }}
+  {{ end }}
+  <div class="flex flex-wrap-reverse justify-between {{with .Params.textcolor}}{{.}}{{end}}">
+  <article class="mv0 w-100 w-70-ns">
+    <header class="lh-title">
+      <div class="vh-100 w-100"></div>
+      <h1 class="mt2 mb2 f1 fw3">{{ .Title | plainify }}</h1>
+      <h2 class="mt0 mb4 f3 fw1">{{ .Params.subtitle | safeHTML }}</h2>
+    </header>
+    <div id="copy" class="content measure mb5">
+      {{ .Content }}
+    </div>
+  </article>
+  <aside class="w-100 w-30-ns mb4 mb0-ns lh-solid tr">
+    <time class="f-subheadline fw3 tr"><span class="f2">{{ dateFormat "2006" .Date }}</span><br>{{ dateFormat "01" .Date }}<span class="fw7">{{ dateFormat "02" .Date }}</span></time>
+    {{ with .Params.studio }}
+    {{ partial "slab-stat-studio" . }}
+    {{ end }}
+  </aside>
+  </div>
+</section>
+<section class="relative bg-black-50">
+  <div class="cf mw8 pv4 ph2 ph0-ns center">
+    {{ range .Params.slides }}
+    <a href="{{.}}" class="fl gallery w-33 w-10-ns dib pa2" >
+        <div class="aspect-ratio--1x1 cover" style="background:url({{.}}) center;">
+        </div>
+    </a>
+    {{ end }}
+  </div>  
+  <script>
+    $(function() {
+      $('a.gallery').featherlightGallery({
+        previousIcon: '&#9664;',     /* Code that is used as previous icon */
+        nextIcon: '&#9654;',         /* Code that is used as next icon */
+        galleryFadeIn: 100,          /* fadeIn speed when slide is loaded */
+        galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
+      });
+    });
+  </script>
+</section>
+
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "footer-black" . }}
+	<script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
+
+  {{ if isset .Params "readerbg" }}
+  <script> 
+  $.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
+  $(window).on('resize scroll', function() {
+    $('#copy').each(function() {
+      if ($(this).isInViewport()) {
+        $("#reader").removeClass("o-0");
+      } else {
+        $("#reader").addClass("o-0");
+      }
+    });
+  });
+  </script>
+  {{ end }} 
+{{ end }}

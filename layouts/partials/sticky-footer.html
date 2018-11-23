@@ -1,0 +1,38 @@
+<section id="footer" class="fixed flex items-center justify-center bottom-0 h3 bg-white-90 w-100 lh-solid trans-all overflow-hidden shadow-5">
+  <div class="flex justify-center items-center">
+  <h2 class="mh2 ml0-ns mr4-ns f5 f3-ns fw1 gray i">Industry news. Curated by <span class="dark-pink">Canned Ox!</span></h2>
+  </h2>
+  <form id="news" class="news">
+    <input placeholder="Email Address" name="email" class="mw-100 w-100 w5-ns f5 fw1 input-reset ba b--black-20 pv2 ph4 border-box bg-transparent">
+    <input id="subscribe" type="submit" value="Subscribe" class="input-reset w-100 w-auto-ns bg-white dark-pink f5 fw1 pv2 ph4 ba b--dark-pink hover-bg-dark-pink hover-white ttu">
+    <div id="spinner" class="spinner v-btm dn">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+  </form>
+  </div>
+</section>
+  
+  <script>
+  $(function() {
+  
+    $(window).on('wheel', function(e) {
+    
+      var delta = e.originalEvent.deltaY;
+    
+      if (delta > 0){
+        $('#footer').css({bottom: -$('#footer').height()});
+      
+      }
+      else{
+        $('#footer').css({bottom: '0'});
+      } 
+    
+      return true; // this line is only added so the whole page won't scroll in the demo
+    });
+  });
+  </script>  
+  

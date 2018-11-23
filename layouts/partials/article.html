@@ -1,0 +1,13 @@
+<section class="relative flex flex-wrap items-stretch">
+  <article class="flex flex-wrap items-end w-100 w-third-ns min-vh-100-ns {{.Params.contentbg}} pa4 pa5-ns">
+    <div class="f6 tracked {{.Params.contenttxt}}">
+      <header class="mb4">
+        <h1 class="f4 tracked mv0">{{ .Title | plainify }}</h1>
+      </header>
+      <div class="content">
+      {{ .Content }}
+      </div>
+    </div>
+  </article>
+  <aside class="w-100 w-two-thirds-ns min-vh-100 cover {{.Params.background}}" style="background-image: url({{.Params.image}})"></aside>
+</section>

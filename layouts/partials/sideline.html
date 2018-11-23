@@ -1,0 +1,4 @@
+<div class="sideline absolute top-200 left-0 inline-flex items-center nowrap">
+  <span class="bar dib mr2 {{ cond (isset . "sidecolor") (printf "bg-%s" .sidecolor) "bg-white" }}"></span> 
+  <h3 class="mv2 f7 fw3 tracked-mega ttu {{ cond (isset . "sidecolor") .sidecolor "white" }}">{{ .sideline }}</h3>
+</div>

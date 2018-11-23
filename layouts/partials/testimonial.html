@@ -1,0 +1,8 @@
+<div class="flex flex-wrap items-stretch nl2-ns nr2-ns">
+  {{ range . }}
+    <div class="flex flex-wrap content-between w-100 w-third-ns pa2 mb3">
+        <blockquote class="w-100 mh0 mt0 mb3mh0 mt0 mb3 bq i">{{.quote}}</blockquote>
+        <cite class="w-100 fs-normal tc f3 lh-solid black-30">{{.name}}<br><span class="f5 i">{{.title}}</span></cite>
+      </div>
+  {{ end }}  
+</div>

@@ -1,0 +1,33 @@
+<input id="menu-overlay-switch" type="checkbox"/>
+<label for="menu-overlay-switch" id="menu-overlay-toggle" class="z-9999 ml2 mt2 ml4-ns mt4-ns z-999"></label>
+
+<section id="menu-overlay" class="overlay-menu fixed top-0 left-0 vh-100 w-100 bg-top" style="background-image: url('/images/099A7733.jpg')">
+  <nav class="relative h-100">
+    <ul id="menu-overlay-top" class="relative flex justify-between w-100 ma0 list white f6 ttu tracked pa4 b--white-50 bb bt-0 bl-0 br-0">
+      <li class="db"><label for="menu-overlay-switch">Home</label></li>
+      <li class="db">Canned Ox</li>
+      <li class="db">Contact</li>
+    </ul>
+    <ul id="menu-overlay-rest" class="relative top-0 left-0 flex flex-wrap w-100 h-100 ma0 pa0 list white f6 ttu tracked">
+      <li class="flex items-center justify-center w-100 w-third-ns h-auto h-50-ns b--white-50 bb"><span class="link relative flex items-center justify-center db h-100 w-100 hide-child">Visual Production
+        <ul class="absolute flex items-center justify-center flex-column list pa0 child top-0 left-0 bg-white h-100 w-100 black-20">
+          <li class="mb3 black-90">Visual Production</li>
+          <li class=""><a href="/" class="link hover-black-90 black-20">Stuff</a></li>
+          <li class="">Stuff</li>
+          <li class="">Stuff</li>
+        </ul></span></li>
+      <li class="flex items-center justify-center w-100 w-third-ns h-auto h-50-ns b--white-50 bb br bl">Creative</li>
+      <li class="flex items-center justify-center w-100 w-third-ns h-auto h-50-ns b--white-50 bb">Workshops</li>
+      <li class="flex items-center justify-center w-100 w-third-ns h-auto h-50-ns">Let's Work</li>
+      <li class="flex items-center justify-center w-100 w-third-ns h-auto h-50-ns b--white-50 br bl">Projects</li>
+      <li class="flex items-center justify-center w-100 w-third-ns h-auto h-50-ns">News</li>
+    </ul>
+  </nav>
+
+</section>
+
+<script>
+  $(window).on("resize load", function(){
+    $("#menu-overlay-rest").height($("#menu-overlay").outerHeight() - $("#menu-overlay-top").outerHeight());
+  });
+</script>

@@ -1,0 +1,48 @@
+{{ define "header" }}
+  {{ partial "nav" . }}
+{{ end }}
+
+{{ define "main" }}
+
+<section class="relative">
+
+  {{ partial "big-block" (dict "img" "/images/099A7758.jpg" "title" "<span class=\"black-10\">Testino Tribute</span>" "subtitle" "<span class=\"black\">A new on-going portrait project.<br><span class=\"dark-pink fw7\">Stay tuned</span><br> as the series continues.</span>" "sideline" "Fashion | Editorial | Portrait" "button" "Participate" "bcolor" "dark-pink" "bnlink" "mailto:info@cdox.cc") }}
+
+  <article class="sticky top-0 flex center pv4 ph3 pv5-ns ph5-ns bg-white lh-title vh-100 items-center">
+    <h1 class="measure-narrow mv0 pl0 pl5-ns f3 f2-ns fw3"><span class="fw7">We are Canned Ox.</span><br>
+    A creative agency and studio focused on helping your brand achieve success utilizing design and unique photographic visuals.</h1>
+  </article>
+
+  <div class="vh-100 w-100 sticky top-0 z-0 bg-white">
+    <div id="target" class="dn absolute top-0 left-0 bottom-0 right-0 bg-black-30"></div>
+  </div>
+
+  <article class="relative sticky top-0 z-0 center lh-solid overflow-x-hidden">
+    <div id="trigger" class="relative z-999 vh-100 bg-clip-text cover bg-top bg-fixed mh3 mh6-ns tc ttu tracked-tight" style="background-image: url('/images/099A7739.jpg')">
+      <h2 class="mv0 di white f1 f-super-ns fw9 clip-text">Testino Tribute</h2>
+    </div>
+  </article>
+
+  <div class="sticky top-0 flex center pv4 ph3 pv5-ns ph5-ns items-center vh-100 dark-pink bg-black lh-title cover bg-center overflow-x-hidden" style="background-image: url('/images/099A7754.jpg')">
+    <h2 class="measure-narrow mv0 pl0 pl5-ns f3 fw3"><span class="fw7">A Portrait Project<br></span>
+    Quite a while go Mario Testino started a project &ndash;<em>the towel project</em>. Brilliant in it's simplisity with a unifying thread of a common non-wardrobe.</h2>
+  </div>
+
+  <div class="vh-100 w-100 sticky top-0 z-0 bg-black">
+    <div id="target" class="dn absolute top-0 left-0 bottom-0 right-0 bg-black-30"></div>
+  </div>
+
+  <article class="relative sticky top-0 z-0 center lh-title cover bg-center overflow-x-hidden">
+    <div id="trigger" class="relative z-999 vh-100 bg-clip-text cover bg-fixed mh3 mh6-ns" style="background-image: url('/images/099A7732.jpg')">
+      <h2 class="mv0 di white f3 f1-ns fw7">Inspiration Not Duplication.&nbsp;</h2>
+      <p class="mv0 di white f3 f1-ns fw7 clip-text">This series is not meant to reproduce any particular photograph. Instead of celebrity the people included will be everyday people using that common unifying thread of plain white towels or bathrobe as wardrobe in anyway they choose.</p>
+    </div>
+  </article>
+
+</section>
+
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "footer" . }}
+{{ end }}

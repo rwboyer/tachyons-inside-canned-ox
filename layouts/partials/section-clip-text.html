@@ -1,0 +1,6 @@
+<article class="wtf flex center pa6 {{.bgcolor}} vh-100 items-center lh-title">
+  <div class="bg-clip-text cover bg-center" style="background-image: url('{{.clipimage}}')">
+  <h2 class="mv0 di {{.color}} f1 fw7">{{ .title | safeHTML }}</h2>
+  <p class="mv0 di white f1 fw7 clip-text">{{ .text | safeHTML }}</p>
+  </div>
+</article>

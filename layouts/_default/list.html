@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+  {{ $paginator := .Paginate .Pages }}
+  {{ range $paginator.Pages}}
+
+  {{ partial "big-block" (dict "img" .Params.image "title" .Title "subtitle" (.Params.subtitle | safeHTML) "sideline" .Params.sideline ( cond (isset .Params "sidecolor") "sidecolor" "" ) .Params.sidecolor "button" "Read More" "bnlink" .Permalink "bcolor" .Params.bcolor "bg" .Params.background) }}
+
+  {{ end }}
+
+  <ul class="flex justify-between items-center pv4 ph4 list f3 fw7 ttu">
+
+  {{ if $paginator.HasPrev }}
+  <li class="dib">
+    <a href="{{ $paginator.Prev.URL }}" class="link black-70 dim">
+      « Newer
+    </a>
+  </li>
+  {{ end }}
+
+  {{ if $paginator.HasNext }}
+  <li class="dib">
+    <a href="{{ $paginator.Next.URL }}" class="link black-70 dim">
+      Older »
+    </a>
+  </li>
+  {{ end }}
+
+</ul>
+
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "footer" . }}
+{{ end }}

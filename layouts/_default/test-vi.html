@@ -1,0 +1,120 @@
+{{ define "header" }}
+  {{ partial "nav" . }}
+{{ end }}
+
+{{ define "main" }}
+
+<section class="relative">
+
+  {{ partial "big-block" (dict "img" "images/099A9380.jpg" "title" "<span class=\"black-10\">Fashion Portrait</span>" "subtitle" "<span class=\"black\">Portraits with a fasion flair.<br><span class=\"dark-pink fw7\">Bringing together</span><br> the art of the portrait + fashion.</span>" "sideline" "Portrait | Editorial" "button" "Participate" "bcolor" "dark-pink" "bnlink" "mailto:info@cdox.cc" "bg" "bg-top") }}
+
+  <article class="sticky top-0 flex center pv4 ph3 pv5-ns ph5-ns bg-white lh-title vh-100 items-center">
+    <h1 class="measure-narrow mv0 pl0 pl5-ns f3 f2-ns fw3"><span class="fw7">We are Canned Ox.</span><br>
+    A creative agency and studio focused on helping your brand achieve success utilizing design and unique photographic visuals.</h1>
+  </article>
+
+  <div class="vh-100 w-100 sticky top-0 z-0 bg-white">
+    <div id="target" class="dn absolute top-0 left-0 bottom-0 right-0 bg-black-30"></div>
+  </div>
+
+  {{ with (.Resources.GetMatch "**/099A9377.jpg") }}
+
+  <article class="relative sticky top-0 z-0 center lh-solid overflow-x-hidden">
+    <div id="trigger" class="relative z-999 vh-100 bg-clip-text cover bg-top bg-fixed mh3 mh0-ns tc ttu tracked-tight" style="background-image: url('{{.RelPermalink}}')">
+      <h2 class="mv0 di white f1 f-super-ns fw9 clip-text">Fashion Portrait</h2>
+    </div>
+  </article>
+
+  {{ end }}
+
+  <div class="sticky top-0 flex center pv4 ph3 pv5-ns ph5-ns items-center vh-100 dark-pink bg-black lh-title cover bg-center overflow-x-hidden" style="background-image: url('{{ (.Resources.GetMatch "**/099A9397.jpg").RelPermalink }}')">
+    <h2 class="measure-narrow mv0 pl0 pl5-ns f3 fw3"><span class="fw7">A Portrait Project<br></span>
+    I've always loved making portraits of people. I've wanted to bring an element of &ndash;<em>fashion sensibility and style</em> to this typically static and staid genre for quite a while. What rule dictates the two are mutually exclusive?</h2>
+  </div>
+
+  <div class="vh-100 w-100 sticky top-0 z-0 bg-black">
+    <div id="target" class="dn absolute top-0 left-0 bottom-0 right-0 bg-black-30"></div>
+  </div>
+
+  {{ with (.Resources.GetMatch "**/099A9416.jpg") }}
+
+  <article class="relative sticky top-0 z-0 center lh-title cover bg-center overflow-x-hidden">
+    <div id="trigger" class="relative z-999 vh-100 bg-clip-text cover bg-fixed mh3 mh6-ns" style="background-image: url('{{.RelPermalink}}')">
+      <h2 class="mv0 di white f3 f1-ns fw7">Simple & Classic.&nbsp;</h2>
+      <p class="mv0 di white f3 f1-ns fw7 clip-text">While adding that fashion sensibility and style my approach is to keep things simple. No complicated lighting or sets, no crew, no hours long preparation. I want to keep things timless and natural in terms of photographic approach while anchoring the image to clothing, colors, and style of a time.</p>
+    </div>
+  </article>
+
+  {{ end }}
+
+  <div class="relative vh-100 bg-black"></div>
+
+  {{ with (.Resources.Match "portfolio/*.jpg") }}
+
+  <article class="hscroll-gallery relative bg-white vh-100" style="--total: {{len .}}">
+    <div class="flex items-end">
+      <aside class="pb4 pb5-ns pr4 pr0-ns">
+        <h3 class="mv0 f5 fw4 black-70 tracked ttu">Ten Minutes In The Garden</h3>
+        <p class="mt4 mb0 mr4 mr0-ns f5 fw3 black-20 measure">A proof of concept made in the back garden. Working with simple oudoor light, a shallow depth of field, and a color treatment inspired by Fujifilm's classic 160NS Pro color negative film.</p>
+      </aside>
+    </div>
+    {{ range . }}
+    <figure class="flex flex-column justify-end pv4 ma0 pb5-ns pt6-ns  overflow-hidden">
+      <img src="{{.RelPermalink}}" class="db h-100 ofc opl">
+      <figcaption class="db mt3 lh-solid f7 fw3 black-20">&copy; R W Boyer</figcaption>
+    </figure>
+    {{ end }}
+  </article>
+
+  {{ end }}
+
+  <article class="relative flex items-center justify-center bg-white pv4 tc">
+    <h1 class="dib mv0 black-40 f1 fw9 lh-solid ttu">Canned Ox
+      <div class="cf">
+        <h2 class="mv0 fr f6 fw4 tracked-mega ttu">by RW Boyer</h2>
+      </div>
+    </h1>
+  </article>
+
+  <article class="relative bg-white pv4 ph2 ph0-ns tc">
+    <h1 class="dib f3 fw5 lh-title ttu tracked black-40">Published From Havre de Grace Maryland
+    <div class="relative flex items-center justify-center mt3">
+      <div class="absolute w-100 bt bw1"></div>
+      <h2 class="absolute mv0 ph3 f5 fw5 ttu tc lh-solid bg-white tracked-mega">UNITED STATES OF AMERICA</h2>
+    </div>
+    </h1>
+  </article>
+
+  <div id="like_button_container" class="relative bg-white tc"></div>
+  <div id="react-target" class="relative bg-white tc"></div>
+  <div id="formik-target" class="relative bg-white tc pv4"></div>
+
+  <div id="#img-list" class="dn">
+    <img src="/images/099A0940.jpg">
+    <img src="/images/099A0941.jpg">
+  </div>
+  <div id="image-target" class="relative bg-white tc pv4 ph6"></div>
+
+  <dl id="port" class="dn">
+  {{ with (.Resources.Match "portfolio/*.jpg") }}
+    {{ range . }}
+    <dd data-item="{{.RelPermalink}}"></dd>
+    {{ end }}
+  {{ end }}
+  </dl>
+
+  <div id="port-target" class="relative bg-white tc pv4 ph6"></div>
+
+</section>
+
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "footer" . }}
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Load our React component. -->
+  <script src="/js/like-button.js"></script>
+  <script src="/js/react-hugo/dist/main.js"></script>
+{{ end }}

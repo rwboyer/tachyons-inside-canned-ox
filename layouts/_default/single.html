@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<section class="relative mw9 ph4 ph5-ns mb5 center">
+  {{ if isset .Params "sideline" }}
+    {{ partial "sideline" (dict "sideline" .Params.sideline (cond (isset .Params "sidecolor") "sidecolor" "") .Params.sidecolor) }}
+  {{ end }}
+  <div class="flex flex-wrap-reverse justify-between">
+  <article class="mv0 w-100 w-70-ns">
+    <header class="lh-title">
+      <img class="" src="{{.Params.image}}" alt="{{.Title | plainify}}">
+      <h1 class="mt2 mb2 f1 fw3">{{ .Title | plainify }}</h1>
+      <h2 class="mt0 mb4 f3 fw1">{{ .Params.subtitle | safeHTML }}</h2>
+    </header>
+    <div class="content mb5">
+      {{ .Content }}
+    </div>
+  </article>
+  <aside class="w-100 w-30-ns mb4 mb0-ns lh-solid tr">
+    <time class="f-subheadline fw3 tr"><span class="f2">{{ dateFormat "2006" .Date }}</span><br>{{ dateFormat "01" .Date }}<span class="fw7">{{ dateFormat "02" .Date }}</span></time>
+    {{ with .Params.stats }}
+    {{ partial "slab-stat" . }}
+    {{ end }}
+  </aside>
+  </div>
+</section>
+
+{{ end }}

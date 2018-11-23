@@ -1,0 +1,43 @@
+{{ define "header" }}
+  {{ partial "nav" . }}
+{{ end }}
+
+{{ define "main" }}
+
+<div class="relative pv6 overflow-hidden flex-wrap justify-center mw9 min-vh-100 center">
+  <h3 class="mv0 w-100 f-headline fw9 lh-solid black-05 tc ttu">Our History</h2>
+  <h2 class="mv0 f1 fw3 lh-title black tc">Get To Know Us</h2>
+  <p class="mt4 pt3 mb0 f5 fw3 lh-copy measure-wide black center tj bt b--dark-green">At Monteverde Engineering & Design Studio, we provide a more rewarding engineering process, developing efficient, sustainable designs that maximize the potential of our client’s vision.  We accomplish this by prioritizing customer service, simplifying the process, and working on clearly defined budgets and schedules.  In sum, we are the advocates and facilitators you and your project deserve.</p>
+  {{ partial "sideline" .Params }}
+</div>
+
+{{ partial "article" . }}
+
+<div class="flex relative bg-near-black min-vh-100 items-center justify-center overflow-hidden">
+  <h1 class="f-super absolute fw9 ma0 black bg-transparent ttu">Black</h1>
+  <h2 class="f-subheadline absolute fw9 tracked-mega ma0 white bg-transparent ttu">White</h2>
+  {{ partial "sideline" .Params }}
+</div>
+
+<section class="relative min-vh-100 cover bg-center bg-fixed" style="background-image: url(/images/099A0914.jpg)">
+  <div class="absolute-ns top-0 left-0 w-100 h-100 pv6 pv0-ns">
+  <div class="pv4 bg-white-70 vcenter-ns">
+    <div class="mw8 center">
+      <header class="lh-solid tracked-tight tc">
+        <h2 class="mt4 mb4 f1 rc fw9">Real People. Real Words.</h2>
+      </header>
+    {{ partial "testimonial" .Params.testimonials }}
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="flex relative bg-white min-vh-100 items-center justify-center overflow-hidden">
+  <h1 class="f-super absolute fw9 ma0 black-05 bg-transparent ttu">White</h1>
+  <h2 class="f-subheadline absolute fw9 tracked-mega ma0 black bg-transparent ttu">Black</h2>
+  {{ partial "sideline" .Params }}
+</div>
+
+{{ partial "sticky-footer" . }}
+
+{{ end }}

@@ -1,0 +1,69 @@
+
+{{ define "main" }}
+
+<section class="absolute vh-100 w-100 top-0 left-0 bg-dark-pink overflow-x-hidden overflow-y-scroll bg-center cover" style="background-image: url('{{ .Params.image }}')">
+
+  <article class="flex center pa5 bg-white lh-title vh-100 items-center">
+    <h1 class="measure-narrow mv0 pl5 f2 fw3"><span class="fw7">We are Canned Ox.</span><br>
+    A creative agency focused on helping your brand achieve success utilizing design and production of photographic visuals.</h1>
+  </article>
+
+  <div class="flex center pa5 items-center vh-100 light-blue bg-black-50 lh-title">
+    <h2 class="measure-narrow mv0 pl5 f2 fw3"><span class="fw7">We are Canned Ox.<br></span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis ab corrupti maiores veniam illum eum animi temporibus fugit libero officia aperiam quae, sed quibusdam omnis, eaque quia. Facilis, dignissimos!</h2>
+  </div>
+
+  {{ partial "section-clip-text" (dict "bgcolor" "bg-black" "color" "white" "clipimage" "/images/099A8537.jpg" "title" "We are Canned Ox.&nbsp;" "text" "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis ab corrupti maiores veniam illum eum animi temporibus fugit libero officia aperiam quae, sed quibusdam omnis, eaque quia. Facilis, dignissimos!") }}
+
+  <article class="relative center bg-black lh-title" style="background-image: url('/images/099A8534.jpg')">
+    <div class="vh-100 w-100 sticky top-0 z-0 cover bg-center" style="background-image: url('/images/099A8534.jpg')">
+      <div id="target" class="dn absolute top-0 left-0 bottom-0 right-0 bg-black-30"></div>
+    </div>
+    <div id="trigger" class="relative z-999 vh-75 bg-clip-text cover mh6 mb6" style="background-image: url('/images/099A8538.jpg')">
+      <h2 class="mv0 di white f1 fw7">We are Canned Ox.&nbsp;</h2>
+      <p class="mv0 di white f1 fw7 clip-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis ab corrupti maiores veniam illum eum animi temporibus fugit libero officia aperiam quae, sed quibusdam omnis, eaque quia. Facilis, dignissimos!</p>
+    </div>
+  </article>
+  <script>
+    $( function(){
+    var animateHTML = function() {
+      var elems;
+      var windowHeight;
+      function init() {
+        elems = document.querySelectorAll('#trigger');
+        windowHeight = window.innerHeight;
+        addEventHandlers();
+        checkPosition();
+      }
+      function addEventHandlers() {
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', init);
+      }
+      function checkPosition() {
+        for (var i = 0; i < elems.length; i++) {
+          var positionFromTop = elems[i].getBoundingClientRect().top;
+          if (positionFromTop - windowHeight <= 0) {
+            var target = document.querySelectorAll('#target');
+            target[9].className = elems[i].className.replace(
+              'dn',
+              'fade-in-element'
+            );
+          }
+        }
+      }
+      return {
+        init: init
+      };
+    };
+    animateHTML().init();
+    });
+  </script>
+
+  {{ partial "footer" . }}
+</section>
+
+{{ end }}
+
+{{ define "footer" }}
+<div class=""></div>
+{{ end }}

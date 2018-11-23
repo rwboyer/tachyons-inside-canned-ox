@@ -1,0 +1,51 @@
+{{ define "main" }}
+<section class="relative mw9 ph4 ph5-ns mb5 center">
+  {{ if isset .Params "sideline" }}
+    {{ partial "sideline" (dict "sideline" .Params.sideline (cond (isset .Params "sidecolor") "sidecolor" "") .Params.sidecolor) }}
+  {{ end }}
+  <div id="horizontal" class="flex items-center flex-wrap-reverse flex-nowrap-l overflow-x-auto-l overflow-y-hidden-l vh-100-l">
+  <article class="relative flex-shrink-0 mv0 w-100 w-50-l vh-100-l">
+    <div class="relative absolute-l bottom-0-l">
+    <header class="lh-title mt5 mt0-l">
+      <h1 class="mt2 mb2 f5 fw5 black-50 ttu">{{ .Title | plainify }}</h1>
+      <h2 class="mt0 mb2 f6 fw3 ttu">{{ .Params.subtitle | safeHTML }}</h2>
+    </header>
+    <div class="w-100 content f6 pb5 pr4 black-30 measure">
+      {{ .Content }}
+    </div>
+    </div>
+  </article>
+  <aside class="w-100 w-50-l vh-75 flex-shrink-0">
+    <div id="slide-contain" class="relative overflow-hidden h-100">
+    <div id="maximage" class="relative" style="position: relative!important;">
+    {{ with .Params.slides }}
+    {{ range . }}
+    <img class="contain bg-white" src="{{.}}">
+    {{ end }}
+    {{ end }}
+    </div>
+    </div>
+</aside>
+  <aside class="flex-shrink-0 w-100 w-50-l mb4 mb0-ns pl4 lh-solid tr">
+    <time class="f-subheadline fw3 tr"><span class="f2">{{ dateFormat "2006" .Date }}</span><br>{{ dateFormat "01" .Date }}<span class="fw7">{{ dateFormat "02" .Date }}</span></time>
+    {{ with .Params.stats }}
+    {{ partial "slab-stat" . }}
+    {{ end }}
+  </aside>
+  </div>
+</section>
+
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    $('#maximage').maximage({
+      cycleOptions: {
+            speed: 800,
+            timeout: 2000
+        },
+      fillElement: '#slide-contain',
+      backgroundSize: 'contain'
+    });
+  });
+</script>
+
+{{ end }}
