@@ -21,7 +21,7 @@
 
   <input type="checkbox" id="light-box" class="dn">
 
-  <section class="flex flex-wrap mw8 center">
+  <section class="flex flex-wrap mw8 center mb5">
     <aside class="w-25"></aside>
     <article class="flex flex-wrap w-75">
       <div class="flex flex-column w-60 pr4">
@@ -70,6 +70,12 @@
     </figure>
     <label for="light-box" class="close z-5 absolute top-0 right-0 ma4"></label>
   </section>
+
+  <ul class="">
+  {{ range .Resources }}
+  <li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+  {{ end }}
+  </ul>  
 
 {{ end }}
 
