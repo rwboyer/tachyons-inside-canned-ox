@@ -32,8 +32,11 @@
       <div class="">
         <label for="light-box-{{($.Scratch.Get "count")}}" class="">
         <figure class="relative mt4 mt5-ns mh0 dim">
-          <img src="{{.Permalink}}" class="db">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
+          <img src="{{.Permalink}}" alt="{{.Title}}" class="db">
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          {{ end }}
         </figure>
         </label>    
       </div>
@@ -46,7 +49,10 @@
       <section id="light-box-slide-{{($.Scratch.Get "count")}}" class="z-999 fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all">
         <figure class="mt5 mh2 mh6-ns">
           <img src="{{.Permalink}}" class="db center mxhi-75">
-          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          {{ end }}
         </figure>
         <label for="light-box-{{($.Scratch.Get "count")}}" class="close z-5 absolute top-0 right-0 ma4"></label>
       </section>
@@ -62,7 +68,10 @@
         <label for="light-box-{{($.Scratch.Get "count")}}" class="">
         <figure class="relative mt4 mt5-ns mh0 dim">
           <img src="{{.Permalink}}" class="db">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          {{ end }}
         </figure>
         </label>    
       </div>
@@ -75,7 +84,10 @@
       <section id="light-box-slide-{{($.Scratch.Get "count")}}" class="z-999 fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all">
         <figure class="mt5 mh2 mh6-ns">
           <img src="{{.Permalink}}" class="db center mxhi-75">
-          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          {{ end }}
         </figure>
         <label for="light-box-{{($.Scratch.Get "count")}}" class="close z-5 absolute top-0 right-0 ma4"></label>
       </section>
