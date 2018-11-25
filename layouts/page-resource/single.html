@@ -6,12 +6,12 @@
   <script type="text/javascript">
     new WOW().init();
   </script>
-  <section class="vh-100 overflow-hidden flex bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg)">
-    <aside class="w-30 pa4">
+  <section class="vh-100 overflow-hidden flex flex-wrap bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg)">
+    <aside class="w-100 w-30-ns pa4">
       <h3 class="mt0 mb4 f3 fw6 tracked lh-solid ttu"><span class="tracked-tight fw2">Inside </span>Chanel</h3>
       {{ partial "nav" . }}
     </aside>
-    <article class="w-70 flex justify-center items-center">
+    <article class="w-100 w-70-ns flex justify-center items-center">
       <header class="lh-title tc">
         <h2 class="mv0 f2 fw3 tracked-tight ttu">Chapter 1</h2>
         <h1 class="mv0 f1 fw5 tracked ttu">Marilyn And &numero;5</h1>
@@ -22,8 +22,8 @@
   <input type="checkbox" id="light-box" class="dn">
 
   <section class="flex flex-wrap mw8 center mb5">
-    <aside class="w-25"></aside>
-    <article class="flex flex-wrap w-75">
+    <aside class="w-100 w-25-ns"></aside>
+    <article class="flex flex-wrap w-100 w-75-ns">
       {{ with .Resources.Match "images-left/*" }}
       <div class="flex flex-column w-60 pr4">
       {{ $.Scratch.Set "count" 0 }}
@@ -44,7 +44,7 @@
       </style>
       <input type="checkbox" id="light-box-{{($.Scratch.Get "count")}}" class="dn">
       <section id="light-box-slide-{{($.Scratch.Get "count")}}" class="z-999 fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all">
-        <figure class="mt5 mh6">
+        <figure class="mt5 mh2 mh6-ns">
           <img src="{{.Permalink}}" class="db center mxhi-75">
           <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
         </figure>
@@ -73,7 +73,7 @@
       </style>
       <input type="checkbox" id="light-box-{{($.Scratch.Get "count")}}" class="dn">
       <section id="light-box-slide-{{($.Scratch.Get "count")}}" class="z-999 fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all">
-        <figure class="mt5 mh6">
+        <figure class="mt5 mh2 mh6-ns">
           <img src="{{.Permalink}}" class="db center mxhi-75">
           <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
         </figure>
