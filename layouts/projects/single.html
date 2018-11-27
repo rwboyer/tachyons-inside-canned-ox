@@ -104,22 +104,6 @@
     <label for="light-box" class="close z-5 absolute top-0 right-0 ma4"></label>
   </section>
 
-  {{ with .Resources.ByType "image" }}
-  <ul class="">
-  {{ range . }}
-  <li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
-  {{ end }}
-  </ul>
-  {{ end }}
-  
-  {{ with .Resources.ByType "page" }}
-  <ul class="">
-  {{ range . }}
-  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><p>{{.Content}}</p></li>
-  {{ end }}
-  </ul>
-  {{ end }}  
-  </div>
 {{ end }}
 
 {{ define "footer" }}

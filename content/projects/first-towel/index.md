@@ -1,13 +1,14 @@
 ---
-title: "Canned Ox Visuals"
-image: "*/*.jpg"
+title: "Towels And Clouds &numero;1"
+subtitle: "Chapter 1"
+image: "*/099A7450.jpg"
+bg: bg-top
 cta: "/contact"
+menu:
+  main:
+    name: 'Towel Series &numero;1'
+    weight: 5
 resources:
-  - src: "*/099A1050.jpg"
-    title: "Just Any Title"
-    params:
-      caption: "Any Old Caption"
-      copy: "&copy; R.W. Boyer"
   - src: "*/*.jpg"
     title: "Default Title"
     params:
