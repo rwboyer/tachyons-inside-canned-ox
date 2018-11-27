@@ -6,11 +6,9 @@
   <script type="text/javascript">
     new WOW().init();
   </script>
-  <section class="vh-100 overflow-hidden flex flex-wrap bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg);">
-    <article class="w-100 w-30-ns pa4">
-      <h3 class="mt0 mb4 f3 fw6 tracked lh-solid ttu"><span class="tracked-tight fw2">Inside </span>Chanel</h3>
-      {{ partial "nav" . }}
-    </article>
+  <div class="bg-white">
+  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg);">
+    {{ partial "nav" . }}
     <article class="w-100 w-70-ns flex justify-center items-end">
       <header class="mb4 mb6-ns lh-title tc">
         <h2 class="mv0 f2 fw3 tracked-tight ttu">Chapter 1</h2>
@@ -120,7 +118,7 @@
   {{ end }}
   </ul>
   {{ end }}  
-
+  </div>
 {{ end }}
 
 {{ define "footer" }}
