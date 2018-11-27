@@ -3,7 +3,7 @@
   <ol class="pl3 mv0 f7 fw6 tracked ttu">
     {{ $currentNode := . }}
     {{ range .Site.Menus.main }}
-    <li class="ma0"><a href="{{.URL}}" class="link white hover-dark-red">{{.Name}}</a></li>
+    <li class="ma0"><a href="{{.URL}}" class="link white hover-dark-red{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} bb {{end}}">{{.Name}}</a></li>
     {{ end }}
   </ol>
 </aside>
