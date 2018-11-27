@@ -1,10 +1,12 @@
 ---
-title: "Canned Ox Visuals"
-image: "/images/099A7758.jpg"
+title: "Lauren Towels &numero;3"
+subtitle: "Chapter 3"
+image: "images-right/099A8045.jpg"
+bg: bg-top
 cta: "/contact"
 menu:
   main:
-    name: 'Towel Series &numero;3'
+    name: 'Towel Series No.3'
     weight: 5
 resources:
   - src: "*/099A1050.jpg"

@@ -7,12 +7,13 @@
     new WOW().init();
   </script>
   <div class="bg-white">
-  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg);">
+  {{ $img := $.Page.Resources.GetMatch (.Params.image)}}
+  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover {{(cond (isset .Params "bg") .Params.bg "bg-center")}} white" style="background-image: url({{$img.RelPermalink}});">
     {{ partial "nav" . }}
     <article class="w-100 w-70-ns flex justify-center items-end">
       <header class="mb4 mb6-ns lh-title tc">
-        <h2 class="mv0 f2 fw3 tracked-tight ttu">Chapter 1</h2>
-        <h1 class="mv0 f1 fw5 tracked ttu">Marilyn And &numero;5</h1>
+        <h2 class="mv0 f2 fw3 tracked-tight ttu">{{ .Params.subtitle | safeHTML }}</h2>
+        <h1 class="mv0 f1 fw5 tracked ttu">{{ .Title | safeHTML }}</h1>
       </header>
     </article>
   </section>
