@@ -30,11 +30,15 @@
       {{ $.Scratch.Add "count" 1 }}
       <div class="">
         <label for="light-box-{{($.Scratch.Get "count")}}" class="">
-        <figure class="relative mt4 mt5-ns mh0 dim">
+        <figure class="relative mt4 mb0 mh0">
           <img src="{{.Permalink}}" alt="{{.Title}}" class="db">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
+          <div class="absolute top-0 left-0 bottom-0 right-0 hide-child">
+          <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-50 child">
           <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          </div>
+          </div>
           {{ end }}
         </figure>
         </label>    
@@ -65,7 +69,7 @@
       {{ $.Scratch.Add "count" 1 }}
       <div class="">
         <label for="light-box-{{($.Scratch.Get "count")}}" class="">
-        <figure class="relative mt4 mt5-ns mh0 dim">
+        <figure class="relative mt4 mb0 mh0">
           <img src="{{.Permalink}}" class="db">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
