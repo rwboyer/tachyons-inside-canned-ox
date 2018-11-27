@@ -16,64 +16,6 @@
       </header>
     </article>
   </section>
-
-  <input type="checkbox" id="light-box" class="dn">
-
-  <section class="flex flex-wrap mw8 center mb5">
-    <aside class="w-25"></aside>
-    <article class="flex flex-wrap w-75">
-      <div class="flex flex-column w-60 pr4">
-      <div class="">
-        <label for="light-box" class="">
-        <figure class="relative mt5 mh0 dim">
-          <img src="/images/099A7733.jpg" class="db">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
-        </figure>
-        </label>    
-      </div>
-      <div class="">
-        <label for="light-box" class="">
-        <figure class="relative mt5 mh0 dim">
-          <img src="/images/099A0941.jpg" class="db">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
-        </figure>
-        </label>    
-      </div>
-      </div>
-      <div class="flex flex-column w-40">
-      <div class="">
-        <label for="light-box" class="">
-        <figure class="relative mt5 mh0 dim">
-          <img src="/images/099A7733.jpg" class="db">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
-        </figure>
-        </label>    
-      </div>
-      <div class="">
-        <label for="light-box" class="">
-        <figure class="relative mt5 mh0 dim">
-          <img src="/images/099A7733.jpg" class="db">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
-        </figure>
-        </label>    
-      </div>
-      </div>
-    </article>
-  </section>
-
-  <section id="light-box-slide" class="fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all z-999">
-    <figure class="mt5 mh6">
-      <img src="/images/099A7733.jpg" class="db center mxhi-75">
-      <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
-    </figure>
-    <label for="light-box" class="close z-5 absolute top-0 right-0 ma4"></label>
-  </section>
-
-  <ul class="">
-  {{ range .Resources }}
-  <li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
-  {{ end }}
-  </ul>  
   </div>
 {{ end }}
 
