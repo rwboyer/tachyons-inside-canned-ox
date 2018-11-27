@@ -104,6 +104,10 @@
   transition: all .5s linear;
 }
 
+.bm-ex{
+  mix-blend-mode: exclusion;
+}
+
 .acenter{
   position: absolute;
   top: 50%;

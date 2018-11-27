@@ -6,12 +6,13 @@
   <script type="text/javascript">
     new WOW().init();
   </script>
-  <section class="vh-100 overflow-hidden flex bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg)">
-    <aside class="w-30 pa4">
-      <h3 class="mt0 mb4 f3 fw6 tracked lh-solid ttu"><span class="tracked-tight fw2">Inside </span>Chanel</h3>
+  <div class="bg-white">
+  <section class="vh-100 overflow-hidden flex justify-end bg-cover bg-top white" style="background-image: url(/images/099A7733.jpg)">
+    <aside class="fixed top-0 left-0 z-999 w-30 pa4 bm-ex">
+      <h3 class="mt0 mb4 f3 fw6 tracked lh-solid ttu"><span class="tracked-tight fw2">Canned </span>OX</h3>
       {{ partial "nav" . }}
     </aside>
-    <article class="w-70 flex justify-center items-center">
+    <article class="w-70 flex justify-center items-end mb6">
       <header class="lh-title tc">
         <h2 class="mv0 f2 fw3 tracked-tight ttu">Chapter 1</h2>
         <h1 class="mv0 f1 fw5 tracked ttu">Marilyn And &numero;5</h1>
@@ -63,7 +64,7 @@
     </article>
   </section>
 
-  <section id="light-box-slide" class="fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all">
+  <section id="light-box-slide" class="fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all z-999">
     <figure class="mt5 mh6">
       <img src="/images/099A7733.jpg" class="db center mxhi-75">
       <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
@@ -76,7 +77,7 @@
   <li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
   {{ end }}
   </ul>  
-
+  </div>
 {{ end }}
 
 {{ define "footer" }}
