@@ -1,15 +1,9 @@
 <aside class="fixed top-0 left-0 z-999 w-30 pa4 bm-ex">
-  <h3 class="mt0 mb4 f3 fw6 tracked lh-solid ttu"><span class="tracked-tight fw2">Canned </span>OX</h3>
-  <ol class="pl3 mv0 f7 fw6 tracked ttu ">
-    <li class="ma0">Item 1</li>
-    <li class="ma0">Item 2</li>
-    <li class="ma0">Item 3</li>
-    <li class="ma0">Item 4</li>
-    <li class="ma0">Item 5</li>
-    <li class="ma0">Item 6</li>
-    <li class="ma0">Item 7</li>
-    <li class="ma0">Item 8</li>
-    <li class="ma0">Item 9</li>
-    <li class="ma0">Item 10</li>
+  <h3 class="mt0 mb4 f3 fw6 tracked lh-solid ttu"><a href="/" class="link white"><span class="tracked-tight fw2">Canned </span>OX</a></h3>
+  <ol class="pl3 mv0 f7 fw6 tracked ttu">
+    {{ $currentNode := . }}
+    {{ range .Site.Menus.main }}
+    <li class="ma0"><a href="{{.URL}}" class="link white hover-dark-red">{{.Name}}</a></li>
+    {{ end }}
   </ol>
 </aside>

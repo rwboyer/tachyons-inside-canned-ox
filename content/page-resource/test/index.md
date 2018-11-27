@@ -2,6 +2,10 @@
 title: "Canned Ox Visuals"
 image: "/images/099A7758.jpg"
 cta: "/contact"
+menu:
+  main:
+    name: 'Test Project'
+    weight: 5
 resources:
   - src: "*/099A1050.jpg"
     title: "Just Any Title"
