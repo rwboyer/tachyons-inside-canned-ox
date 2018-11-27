@@ -8,7 +8,7 @@
   </script>
   <div class="bg-white">
   {{ $img := $.Page.Resources.GetMatch (.Params.image) }}
-  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover bg-black {{(cond (isset .Params "bg") .Params.bg "bg-center")}} white" style="background-image: url({{ $img.RelPermalink }});">
+  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover bg-black {{(cond (isset .Params "bg") .Params.bg "bg-center")}} {{(cond (isset .Params "color") .Params.color "white")}}" style="background-image: url({{ $img.RelPermalink }});">
     {{ partial "nav" . }}
     <article class="w-100 w-70-ns flex justify-center items-end">
       <header class="mb4 mb6-ns lh-title tc">
@@ -35,7 +35,7 @@
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
           <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-50 child">
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          <figcaption class="acenter w-90 f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML }}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
           </div>
           {{ end }}
         </figure>
@@ -71,7 +71,7 @@
           <img src="{{.Permalink}}" class="db">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
-          <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-50 child">          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-50 child">          <figcaption class="acenter w-90 f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML }}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
           </div>
           {{ end }}
         </figure>
