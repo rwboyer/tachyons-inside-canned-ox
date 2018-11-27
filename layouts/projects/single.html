@@ -30,14 +30,12 @@
       {{ $.Scratch.Add "count" 1 }}
       <div class="">
         <label for="light-box-{{($.Scratch.Get "count")}}" class="">
-        <figure class="relative mt4 mb0 mh0">
+        <figure class="relative mt4 mb0 mh0 hide-child">
           <img src="{{.Permalink}}" alt="{{.Title}}" class="db">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
-          <div class="absolute top-0 left-0 bottom-0 right-0 hide-child">
           <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-50 child">
           <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
-          </div>
           </div>
           {{ end }}
         </figure>
@@ -69,11 +67,12 @@
       {{ $.Scratch.Add "count" 1 }}
       <div class="">
         <label for="light-box-{{($.Scratch.Get "count")}}" class="">
-        <figure class="relative mt4 mb0 mh0">
+        <figure class="relative mt4 mb0 mh0 hide-child">
           <img src="{{.Permalink}}" class="db">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
-          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-50 child">          <figcaption class="acenter f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          </div>
           {{ end }}
         </figure>
         </label>    
