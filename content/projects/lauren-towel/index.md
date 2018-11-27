@@ -6,14 +6,9 @@ bg: bg-top
 cta: "/contact"
 menu:
   main:
-    name: 'Towel Series No.3'
+    name: 'Towel Series &numero;3'
     weight: 5
 resources:
-  - src: "*/099A1050.jpg"
-    title: "Just Any Title"
-    params:
-      caption: "Any Old Caption"
-      copy: "&copy; R.W. Boyer"
   - src: "*/*.jpg"
     title: "Default Title"
     params:

@@ -7,8 +7,8 @@
     new WOW().init();
   </script>
   <div class="bg-white">
-  {{ $img := $.Page.Resources.GetMatch (.Params.image)}}
-  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover {{(cond (isset .Params "bg") .Params.bg "bg-center")}} white" style="background-image: url({{$img.RelPermalink}});">
+  {{ $img := $.Page.Resources.GetMatch (.Params.image) }}
+  <section class="vh-100 overflow-hidden flex justify-end flex-wrap bg-cover bg-black {{(cond (isset .Params "bg") .Params.bg "bg-center")}} white" style="background-image: url({{ $img.RelPermalink }});">
     {{ partial "nav" . }}
     <article class="w-100 w-70-ns flex justify-center items-end">
       <header class="mb4 mb6-ns lh-title tc">

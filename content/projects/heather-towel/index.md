@@ -1,17 +1,14 @@
 ---
 title: "Canned Ox Visuals"
-image: "/images/099A7758.jpg"
+subtitle: "Subtitle"
+bg: bg-top
+image: "*/099A7760.jpg"
 cta: "/contact"
 menu:
   main:
-    name: 'Towel Series No.2'
+    name: 'Towel Series &numero;2'
     weight: 5
 resources:
-  - src: "*/099A1050.jpg"
-    title: "Just Any Title"
-    params:
-      caption: "Any Old Caption"
-      copy: "&copy; R.W. Boyer"
   - src: "*/*.jpg"
     title: "Default Title"
     params:

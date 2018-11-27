@@ -1,10 +1,10 @@
 ---
 title: "Canned Ox Visuals"
-image: "/images/099A7758.jpg"
+image: "*/*.jpg"
 cta: "/contact"
 menu:
   main:
-    name: 'Towel Series &numero;3'
+    name: 'Towel Series &numero;1'
     weight: 5
 resources:
   - src: "*/099A1050.jpg"
