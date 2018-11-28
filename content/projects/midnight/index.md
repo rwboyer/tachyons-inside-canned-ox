@@ -1,17 +1,17 @@
 ---
 title: "Towels And Clouds &numero;1"
 subtitle: "Chapter 1"
-image: "*/099A7450.jpg"
+image: "*/*.jpg"
 bg: bg-top
 color: black
 cta: "/contact"
 menu:
   main:
-    name: 'Towel Series &numero;1'
-    weight: 5
+    name: 'Whiskey &amp; Plastic'
+    weight: 4
 resources:
   - src: "*/*.jpg"
-    title: "Nicole &numero;1"
+    title: "Whiskey &amp; Plastic"
     params:
       caption: "Cattail Studio 2018"
       copy: "&copy; R.W. Boyer"
