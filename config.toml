@@ -10,3 +10,6 @@ ignoreFiles = [ ".*/static/js/react-hugo/node_modules/.*" ]
   changefreq = "monthly"
   filename = "sitemap.xml"
   priority = 0.5
+
+[params]
+  image = "/projects/lauren-towel/images-right/099A8049.jpg"
