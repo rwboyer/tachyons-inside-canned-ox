@@ -1,17 +1,17 @@
 ---
-title: "Gossamer Or Plastic"
+title: "Whiskey &amp; Plastic"
 subtitle: "Inspired By Series"
-image: "*/*.jpg"
-bg: bg-top
-color: black
+image: "*/099A7937.jpg"
+bg: bg-center
+color: white
 cta: "/contact"
 menu:
   main:
-    name: 'Gossamer Or Plastic'
+    name: 'Whiskey &amp; Plastic'
     weight: 4
 resources:
   - src: "*/*.jpg"
-    title: "Gossamer Or Plastic"
+    title: "Whiskey &amp; Plastic"
     params:
       caption: "Cattail Studio 2018"
       copy: "&copy; R.W. Boyer"
