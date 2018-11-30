@@ -1,4 +1,4 @@
-<meta property="og:title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Title | plainify }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}" />
+<meta property="og:title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Title | safeHTML }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}" />
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
