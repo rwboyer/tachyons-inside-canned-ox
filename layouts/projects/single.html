@@ -52,7 +52,7 @@
           <img src="{{.Permalink}}" class="db center mxhi-75">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
-          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
           {{ end }}
         </figure>
         <label for="light-box-{{($.Scratch.Get "count")}}" class="close z-5 absolute top-0 right-0 ma4"></label>
@@ -88,7 +88,7 @@
           <img src="{{.Permalink}}" class="db center mxhi-75">
           {{ $.Scratch.Set "title" .Title }}
           {{ with .Params }}
-          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title")}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
+          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML}}<br>{{.caption}}<br><span class="black-50">{{ .copy | safeHTML }}</span></figcaption>
           {{ end }}
         </figure>
         <label for="light-box-{{($.Scratch.Get "count")}}" class="close z-5 absolute top-0 right-0 ma4"></label>
