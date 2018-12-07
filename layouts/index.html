@@ -7,7 +7,13 @@
     new WOW().init();
   </script>
   <div class="bg-white">
-  <section class="vh-100 overflow-hidden flex justify-end bg-cover bg-top bg-black white">
+  {{ $img := $.Page.Resources.GetMatch (.Params.image) }}
+  {{ if $img }}
+    {{ $.Scratch.Set "img" $img.RelPermalink }}
+  {{ else }}
+    {{ $.Scratch.Set "img" .Params.image }}
+  {{ end }}
+  <section class="vh-100 overflow-hidden flex justify-end bg-cover bg-top bg-black white" style="background-image: url({{ ($.Scratch.Get "img") }});">
     {{ partial "nav" . }}
     <article class="w-70 flex justify-center items-end mb6">
       <header class="lh-title tc">
