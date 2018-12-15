@@ -1,0 +1,138 @@
+{{ define "header" }}
+  <div class="dn"></div>
+{{ end }}
+
+{{ define "main" }}
+  <script type="text/javascript">
+    new WOW().init();
+  </script>
+  <div class="bg-black white">
+
+  {{ $img := $.Page.Resources.GetMatch (.Params.image) }}
+  {{ if $img }}
+    {{ $.Scratch.Set "img" $img.RelPermalink }}
+  {{ else }}
+    {{ $.Scratch.Set "img" .Params.image }}
+  {{ end }}
+
+  <section class="overflow-hidden flex flex-wrap pb5">
+    {{ partial "nav" . }}
+    <figure class="db w-100 w-40-ns ma0">
+      <img class="db" src="{{ ($.Scratch.Get "img") }}">
+      {{/* 
+      <div class="aspect-ratio aspect-ratio--4x6">
+        <div class="aspect-ratio--object cover bg-black {{(cond (isset .Params "bg") .Params.bg "bg-center")}} {{(cond (isset .Params "color") .Params.color "white")}}" style="background-image: url({{ ($.Scratch.Get "img") }});"></div>
+      </div>
+      */}}
+    </figure>
+    <article class="w-100 w-60-ns pa5 flex flex-column">
+      <header class="pl4 mb5 lh-solid bl">
+        {{ with .Params.subtitle }}
+        <h2 class="mv0 f2 fw3 tracked-tight ttu">{{ .Params.subtitle | safeHTML }}</h2>
+        {{ end }}
+        <h1 class="mv0 f2 f-subheadline-ns fw3 tracked ttu">{{ .Title | safeHTML }}</h1>
+      </header>
+      <div class="pl4 ml1 f7 fw3 lh-copy measure">
+        {{ .Content }}
+      </div>
+      <div class="w-70 ml4 relative flex items-center justify-end mt5">
+        <div class="absolute w-100 bt"></div>
+        <h2 class="absolute mv0 pl4 f7 fw3 ttu tc lh-solid bg-black">R W Boyer</h2>
+      </div>    
+    </article>
+  </section>
+
+  <input type="checkbox" id="light-box" class="dn">
+
+  <section class="flex flex-wrap mw8 center pb5">
+    <aside class="w-100 w-25-ns"></aside>
+    <article class="flex flex-wrap w-100 w-75-ns">
+      {{ with .Resources.Match "images-left/*" }}
+      <div class="flex flex-column w-60 pr4">
+      {{ $.Scratch.Set "count" 0 }}
+      {{ range . }}
+      {{ $.Scratch.Add "count" 1 }}
+      <div class="">
+        <label for="light-box-{{($.Scratch.Get "count")}}" class="">
+        <figure class="relative mt4 mb0 mh0 hide-child">
+          <img src="{{.Permalink}}" alt="{{.Title}}" class="db">
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <div class="absolute top-0 left-0 bottom-0 right-0 bg-black-50 white child">
+          <figcaption class="acenter w-90 f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML }}<br>{{.caption}}<br><span class="white-50">{{ .copy | safeHTML }}</span></figcaption>
+          </div>
+          {{ end }}
+        </figure>
+        </label>    
+      </div>
+      <style>
+      #light-box-{{($.Scratch.Get "count")}}:checked~#light-box-slide-{{($.Scratch.Get "count")}}{
+          top: 0;
+      }
+      </style>
+      <input type="checkbox" id="light-box-{{($.Scratch.Get "count")}}" class="dn">
+      <section id="light-box-slide-{{($.Scratch.Get "count")}}" class="z-999 fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-black white trans-all">
+        <figure class="mt5 mb2 mh2 mh6-ns">
+          <img src="{{.Permalink}}" class="db center mxhi-75">
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML}}<br>{{.caption}}<br><span class="white-50">{{ .copy | safeHTML }}</span></figcaption>
+          {{ end }}
+        </figure>
+        <label for="light-box-{{($.Scratch.Get "count")}}" class="close-dark z-5 absolute top-0 right-0 ma4"></label>
+      </section>
+      {{ end }}
+      </div>
+      {{ end }}
+      {{ with .Resources.Match "images-right/*" }}
+      <div class="flex flex-column w-40">
+      {{/* $.Scratch.Set "count" 0 */}}
+      {{ range . }}
+      {{ $.Scratch.Add "count" 1 }}
+      <div class="">
+        <label for="light-box-{{($.Scratch.Get "count")}}" class="">
+        <figure class="relative mt4 mb0 mh0 hide-child">
+          <img src="{{.Permalink}}" class="db">
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <div class="absolute top-0 left-0 bottom-0 right-0 bg-black-50 white child">          <figcaption class="acenter w-90 f7 fw6 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML }}<br>{{.caption}}<br><span class="white-50">{{ .copy | safeHTML }}</span></figcaption>
+          </div>
+          {{ end }}
+        </figure>
+        </label>    
+      </div>
+      <style>
+      #light-box-{{($.Scratch.Get "count")}}:checked~#light-box-slide-{{($.Scratch.Get "count")}}{
+          top: 0;
+      }
+      </style>
+      <input type="checkbox" id="light-box-{{($.Scratch.Get "count")}}" class="dn">
+      <section id="light-box-slide-{{($.Scratch.Get "count")}}" class="z-999 fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-black white trans-all">
+        <figure class="mt5 mb2 mh2 mh6-ns">
+          <img src="{{.Permalink}}" class="db center mxhi-75">
+          {{ $.Scratch.Set "title" .Title }}
+          {{ with .Params }}
+          <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">{{($.Scratch.Get "title") | safeHTML}}<br>{{.caption}}<br><span class="white-50">{{ .copy | safeHTML }}</span></figcaption>
+          {{ end }}
+        </figure>
+        <label for="light-box-{{($.Scratch.Get "count")}}" class="close-dark z-5 absolute top-0 right-0 ma4"></label>
+      </section>
+      {{ end }}
+      </div>
+      {{ end }}
+    </article>
+  </section>
+
+  <section id="light-box-slide" class="fixed flex justify-center top-100 left-0 h-100 w-100 overflow-hidden bg-white trans-all">
+    <figure class="mt5 mh6">
+      <img src="/images/099A0941.jpg" class="db center mxhi-75">
+      <figcaption class="mt4 f7 fw5 tracked lh-title ttu tc">2018<br>Caption Of Picture<br><span class="black-50">&copy;R. W. Boyer</span></figcaption>
+    </figure>
+    <label for="light-box" class="close z-5 absolute top-0 right-0 ma4"></label>
+  </section>
+
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "footer-black" . }}
+{{ end }}
