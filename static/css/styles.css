@@ -72,6 +72,10 @@
   font-size: 40rem;
 }
 
+.f-bg-vw{
+  font-size: 15vw;
+}
+
 #reader{
   transition: all 0.5s;
 }
