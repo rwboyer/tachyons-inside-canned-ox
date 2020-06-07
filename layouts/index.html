@@ -6,55 +6,20 @@
   <script type="text/javascript">
     new WOW().init();
   </script>
-  <div class="bg-white">
-  {{ $img := $.Page.Resources.GetMatch (.Params.image) }}
-  {{ if $img }}
-    {{ $.Scratch.Set "img" $img.RelPermalink }}
-  {{ else }}
-    {{ $.Scratch.Set "img" .Params.image }}
-  {{ end }}
-  <section class="relative flex items-center justify-center overflow-x-hidden vh-100 bg-near-black">
-    <aside class="black absolute w-100 lh-solid tracked ttu tc">
-      <h3 class="f-bg-vw fw9"><span class="tracked-tight fw5">Canned</span><span class="fw9">Ox</span><br>Design</h3>
-    </aside>
-    <div class="absolute w-100 flex justify-end">
-    <article class="w-100 w-60-ns pa5 flex flex-column white">
-      <header class="w-100">
-        <h1 class="mt0 mb0 f3 fw6 tracked lh-solid ttu"><a href="/" class="link white"><span class="tracked-tight fw2">Canned </span>OX</a></h1>
-        <h2 class="mt0 f3 fw6 tracked lh-solid ttu white">Design</h2>
-      </header>
-      <h3 class="mt0 mb3 f5 fw6 tracked lh-solid ttu">Woman's Fashion &amp Accesories</h3>
-      <div class="f5 f7-ns fw3 lh-copy measure">
-        {{ .Content }}
-      </div>
-    </article>
-    </div>
-  </section>
-  <section class="relative vh-100 overflow-hidden flex items-center justify-center cover bg-top bg-black white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0, 0.7)), url({{ ($.Scratch.Get "img") }});">
-    {{/* partial "nav" . */}}
-    <aside class="white-20 absolute w-100 lh-solid tracked ttu tc">
-      <h3 class="f-bg-vw fw9"><span class="fw9">Coming</span><br>Soon</h3>
-    </aside>
-    <article class="absolute w-90 w-70-ns flex justify-center items-end">
-      <header class="lh-title tc">
-        <h2 class="mv0 f2 fw3 tracked ttu">Chapter &numero;1</h2>
-        <h1 class="mt7 mt5-ns mb0 f3 f1-ns fw5 tracked ttu">Collars <span class="f2-ns">&amp;</span> Neck Pieces</h1>
-      </header>
-    </article>
-  </section>
-  <section class="relative vh-100 overflow-hidden flex items-center justify-center cover bg-center bg-black white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0, 0.7)), url('/images/099A8474.jpg');">
-    {{/* partial "nav" . */}}
-    <aside class="white-20 absolute w-100 lh-solid tracked ttu tc">
-      <h3 class="f-bg-vw fw9"><span class="fw9">Coming</span><br>Soon</h3>
-    </aside>
-    <article class="absolute w-90 w-70-ns flex justify-center items-end mb6">
-      <header class="lh-title tc">
-        <h2 class="mv0 f2 fw3 tracked ttu">Chapter &numero;2</h2>
-        <h1 class="mt7 mt5-ns mb0 f3 f1-ns fw5 tracked ttu">Tops, Corsets, <span class="f2-ns">&amp;</span> Waist Cinchers</h1>
-      </header>
-    </article>
-  </section>
+
+<section class="fixed vh-100 w-100">
+  <div class="" style='position: fixed; z-index: -99; width: 2320px; height: 180%; left: 0;top: -38%;'>
+    <iframe class="o-10" frameborder="0" height="100%" width="100%" src="https://youtube.com/embed/tz8Puc4W5BM?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1"></iframe>
   </div>
+  <article class="absolute bottom-0 left-0 pa5 trans-all">
+    <header class="">
+      <h1 class="mv0 f2 fw5">industrial <span class="yellow">strength &rsaquo;</span></h1>
+      <hr class="w3 b--yellow bt bw1 mh0 mv4">
+      <h3 class="mv0 f4 fw5">a really <span class="yellow">cool</span> thing</h1>
+    </header>
+  </article>
+</section>
+
 {{ end }}
 
 {{ define "footer" }}
