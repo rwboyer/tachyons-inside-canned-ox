@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "Fira Code";
+    font-weight: 600;
+    src: url('fira code medium.ttf' format('truetype'));
+}
