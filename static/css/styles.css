@@ -2,6 +2,16 @@
   font-family: 'lato', sans-serif;
 }
 
+@font-face {
+  font-family: "ibm3270-Regular";
+  font-weight: 400;
+  src: url('/css/fonts/3270-Regular.woff') format('woff');
+}
+
+.f-3270{
+  font-family: "ibm3270-Regular";
+}
+
 .rb {
   font-family: 'Roboto', sans-serif;
 }
