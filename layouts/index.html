@@ -40,7 +40,7 @@
     }
   
     let token
-    
+    await netlifyIdentity.refresh()
     getToken()
     .then(t => {token = t})
   
