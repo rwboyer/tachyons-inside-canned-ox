@@ -3,7 +3,9 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/base64"
 	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -11,10 +13,56 @@ import (
 	"github.com/aws/aws-lambda-go/lambdacontext"
 )
 
+type Identity struct {
+	URL   string `json:"url"`
+	Token string `json:"token"`
+}
+
+type User struct {
+	AppMetaData  *AppMetaData  `json:"app_metadata"`
+	Email        string        `json:"email"`
+	Exp          int           `json:"exp"`
+	Sub          string        `json:"sub"`
+	UserMetadata *UserMetadata `json:"user_metadata"`
+}
+
+type AppMetaData struct {
+	Provider string `json:"provider"`
+}
+type UserMetadata struct {
+	FullName string `json:"full_name"`
+}
+
+type Bearer struct {
+	Identity *Identity `json:"identity"`
+	User     *User     `json:"user"`
+	SiteUrl  string    `json:"site_url"`
+	Alg      string    `json:"alg"`
+}
+
 func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	lc, _ := lambdacontext.FromContext(ctx)
 	cc := lc.ClientContext
 	id := lc.Identity
+
+	bearer := lc.ClientContext.Custom["netlify"]
+	raw, err := base64.StdEncoding.DecodeString(bearer)
+	if err != nil {
+		log.Print(err)
+	}
+	log.Print(raw)
+	data := Bearer{}
+	var rj map[string]interface{}
+	err = json.Unmarshal(raw, &rj)
+
+	if err != nil {
+		log.Print(err)
+	}
+	err = json.Unmarshal(raw, &data)
+
+	if err != nil {
+		log.Print(err)
+	}
 
 	input := struct {
 		ReqCC      lambdacontext.ClientContext
