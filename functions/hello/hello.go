@@ -13,12 +13,18 @@ import (
 
 func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	lc, _ := lambdacontext.FromContext(ctx)
+	cc := lc.ClientContext
+	id := lc.Identity
 
 	input := struct {
+		ReqCC      lambdacontext.ClientContext
+		ReqID      lambdacontext.CognitoIdentity
 		ReqContext *lambdacontext.LambdaContext
 		ReqEvents  events.APIGatewayProxyRequest
 		ReqHeaders map[string]string
 	}{
+		cc,
+		id,
 		lc,
 		request,
 		request.Headers,
