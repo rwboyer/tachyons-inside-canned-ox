@@ -27,4 +27,32 @@
 
 {{ define "footer" }}
   <div class="dn"></div>
-{{ end }}
+  <div data-netlify-identity-button>Login with Netlify Identity</div>
+  <script>
+    async function getToken() {
+      const currentUser = netlifyIdentity.currentUser()
+      if (!currentUser) {
+        return ''
+      }
+      // fetchs new JWT token only if expired
+      await currentUser.jwt()
+      return currentUser.token.access_token
+    }
+  
+    let token
+    
+    getToken()
+    .then(t => {token = t})
+  
+    fetch(`/.netlify/functions/hello`, {
+      headers: { Authorization: `Bearer ${token}` }})
+    .then(response =>{
+      response.json().then(j => {
+        console.log(j)
+      })
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  </script>
+  {{ end }}

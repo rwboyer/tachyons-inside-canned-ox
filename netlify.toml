@@ -1,0 +1,6 @@
+[functions]
+  directory = "functions"
+
+[build.environment]
+  GO_IMPORT_PATH="github.com/rwboyer/dino-don-inc-11ty"
+  GO_VERSION="1.17"
