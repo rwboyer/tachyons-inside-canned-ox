@@ -65,12 +65,14 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	}
 
 	input := struct {
+		ReqCustom  map[string]interface{}
 		ReqCC      lambdacontext.ClientContext
 		ReqID      lambdacontext.CognitoIdentity
 		ReqContext *lambdacontext.LambdaContext
 		ReqEvents  events.APIGatewayProxyRequest
 		ReqHeaders map[string]string
 	}{
+		rj,
 		cc,
 		id,
 		lc,
