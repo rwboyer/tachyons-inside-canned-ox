@@ -40,10 +40,12 @@
     }
   
     let token
-    await netlifyIdentity.refresh()
-    getToken()
-    .then(t => {token = t})
-  
+    netlifyIdentity.refresh()
+    .then(jwt => {
+      console.log(jwt)
+      getToken()
+      .then(t => {token = t})
+    })
     fetch(`/.netlify/functions/hello`, {
       headers: { Authorization: `Bearer ${token}` }})
     .then(response =>{
