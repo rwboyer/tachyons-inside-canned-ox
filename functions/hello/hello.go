@@ -2,19 +2,25 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/aws/aws-lambda-go/lambdacontext"
 )
 
-func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
+func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
+	lc, _ := lambdacontext.FromContext(ctx)
+
 	input := struct {
-		ReqContext events.APIGatewayProxyRequestContext //`json: reqcontext`
-		ReqHeaders map[string]string                    //`json: reqheaders`
+		ReqContext *lambdacontext.LambdaContext
+		ReqEvents  events.APIGatewayProxyRequest
+		ReqHeaders map[string]string
 	}{
-		request.RequestContext,
+		lc,
+		request,
 		request.Headers,
 	}
 	buf := bytes.NewBuffer([]byte{})
