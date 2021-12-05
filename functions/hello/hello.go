@@ -10,10 +10,16 @@ import (
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
-	id := request.RequestContext
+	input := struct {
+		ReqContext events.APIGatewayProxyRequestContext //`json: reqcontext`
+		ReqHeaders map[string]string                    //`json: reqheaders`
+	}{
+		request.RequestContext,
+		request.Headers,
+	}
 	buf := bytes.NewBuffer([]byte{})
 	e := json.NewEncoder(buf)
-	e.Encode(id)
+	e.Encode(input)
 
 	return &events.APIGatewayProxyResponse{
 		StatusCode:        200,
