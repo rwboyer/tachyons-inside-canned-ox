@@ -39,14 +39,11 @@
     return currentUser.token.access_token
   }
   
-  window.onload = function(){
+  window.onload = async function(){
     let token
-    netlifyIdentity.refresh()
-    .then(jwt => {
-      console.log(jwt)
-      getToken()
-      .then(t => {token = t})
-    })
+    jwt = await netlifyIdentity.refresh()
+    console.log(jwt)
+    token = await getToken()
     fetch(`/.netlify/functions/hello`, {
       headers: { Authorization: `Bearer ${token}` }})
     .then(response =>{
