@@ -10,4 +10,4 @@
   to = "https://mccrery.cdox.cc/jws/hello/from/netlify"
   status = 200
   force = true
-  signed = "API_SIGNATURE_TOKEN_PLACEHOLDER"
+  signed = "API_SIGNATURE_TOKEN"
