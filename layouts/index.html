@@ -65,6 +65,18 @@
     .catch(error => {
       console.log(error)
     })
+    
+    fetch(`/jws/helloM/from/netlify/hugo/site`, {
+      headers: { Authorization: `Bearer ${token}` }})
+    .then(response => {
+      response.json().then(j =>{
+        console.log(j)
+      })
+    })
+    .catch(error => {
+      console.log(error)
+    })
+
     fetch(`/jws/hello/post/from/netlify/hugo/site`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` }})
