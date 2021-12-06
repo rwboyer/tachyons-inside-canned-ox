@@ -50,8 +50,10 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	if err != nil {
 		log.Print(err)
 	}
+
 	log.Print(raw)
 	data := Bearer{}
+
 	var rj map[string]interface{}
 	err = json.Unmarshal(raw, &rj)
 
