@@ -6,8 +6,8 @@
   GO_VERSION="1.17"
 
 [[redirects]]
-  from = "/jws"
-  to = "https://mccrery.cdox.cc/jws/hello/from/netlify"
+  from = "/jws/*"
+  to = "https://mccrery.cdox.cc/jws/:splat"
   status = 200
   force = true
   signed = "API_SIGNATURE_TOKEN"
