@@ -54,6 +54,16 @@
     .catch(error =>{
       console.log(error)
     })
+    
+    fetch(`/jws/hello/from/netlify/hugo/site`, {
+      headers: { Authorization: `Bearer ${token}` }})
+    .then(response => {
+      response.json().then(j =>{
+        console.log(j)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
   </script>
 {{ end }}
