@@ -10,5 +10,5 @@
   to = "https://mccrery.cdox.cc/jws/:splat"
   status = 200
   force = true
-  signed = "IMPOSSIBLE"
+  signed = "API_SIGNATURE_TOKEN"
   conditions = {Role = ["admin"]}
